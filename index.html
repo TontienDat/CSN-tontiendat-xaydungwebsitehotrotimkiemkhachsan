@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Khách sạn Vĩnh Long – Tìm &amp; đặt phòng</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <h1>🏨 Khách sạn Vĩnh Long</h1>
+      <p>Tìm và đặt phòng tại Vĩnh Long, Trà Vinh, Bến Tre và các điểm du lịch miệt vườn</p>
+    </div>
+  </header>
+
+  <!-- Thanh tìm kiếm -->
+  <form class="search" id="sf" onsubmit="return false">
+    <div class="f">
+      <label>Điểm đến</label>
+      <select id="area"><option value="">Tất cả khu vực</option></select>
+    </div>
+    <div class="f">
+      <label>Nhận phòng</label>
+      <input type="date" id="cin">
+    </div>
+    <div class="f">
+      <label>Trả phòng</label>
+      <input type="date" id="cout">
+    </div>
+    <div class="f">
+      <label>Số khách</label>
+      <select id="guests">
+        <option>1</option><option selected>2</option><option>3</option><option>4</option><option>6</option>
+      </select>
+    </div>
+    <button class="btn" id="go">Tìm kiếm</button>
+  </form>
+
+  <div class="wrap">
+    <main>
+      <!-- Bộ lọc -->
+      <aside>
+        <div class="grp">
+          <h3>Giá tối đa / đêm</h3>
+          <input type="range" id="price" min="200000" max="2000000" step="50000" value="2000000">
+          <div class="muted" id="pv"></div>
+        </div>
+        <div class="grp"><h3>Hạng sao</h3><div id="starf"></div></div>
+        <div class="grp"><h3>Tiện nghi</h3><div id="amf"></div></div>
+        <button class="sel" id="reset" style="width:100%">Xóa bộ lọc</button>
+      </aside>
+
+      <!-- Kết quả -->
+      <section>
+        <div class="bar">
+          <b id="count"></b>
+          <select id="sort">
+            <option value="rec">Đề xuất</option>
+            <option value="pa">Giá thấp đến cao</option>
+            <option value="pd">Giá cao đến thấp</option>
+            <option value="rt">Đánh giá cao nhất</option>
+          </select>
+        </div>
+        <div id="list"></div>
+      </section>
+    </main>
+
+    <p class="note">Dữ liệu khách sạn và giá trên trang là dữ liệu mẫu để minh họa giao diện. Cần thay bằng dữ liệu thật từ đối tác trước khi vận hành.</p>
+  </div>
+
+  <!-- Hộp thoại đặt phòng -->
+  <dialog id="dlg"><div id="dbody"></div></dialog>
+
+  <!-- Thứ tự quan trọng: data.js phải nằm trước script.js -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
