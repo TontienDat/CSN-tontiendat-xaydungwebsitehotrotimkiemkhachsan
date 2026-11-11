@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap");
+
+/* ===== Màu sắc & biến chung ===== */
+:root{
+  --xanh:#0e4d4f;
+  --xanh-sang:#14696b;
+  --xanh-nhat:#e3efec;
+  --vang:#f0a81a;
+  --vang-dam:#3d2a00;
+  --nen:#eef3f1;
+  --trang:#ffffff;
+  --chu:#16231f;
+  --chu-nhat:#5d706a;
+  --vien:#d6e2de;
+  --bong:0 2px 8px rgba(14,77,79,.08);
+  --bong-lon:0 8px 24px rgba(14,77,79,.16);
+  --bo-goc:14px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  background:var(--nen);
+  color:var(--chu);
+  line-height:1.55;
+}
+a{color:var(--xanh-sang)}
+:focus-visible{outline:3px solid var(--vang);outline-offset:2px}
+
+/* ===== Đầu trang ===== */
+header{
+  background:linear-gradient(135deg,var(--xanh) 0%,var(--xanh-sang) 100%);
+  color:#fff;
+  padding:26px 20px 70px;
+}
+header h1{
+  max-width:1100px;
+  margin:0 auto;
+  font-size:clamp(24px,4vw,36px);
+  font-weight:800;
+  letter-spacing:-.02em;
+}
+header a{color:#fff;text-decoration:none}
+
+/* ===== Khung nội dung (kéo lên đè lên phần đầu trang) ===== */
+.container{
+  max-width:1100px;
+  margin:-44px auto 40px;
+  padding:0 16px;
+}
+.box{
+  background:var(--trang);
+  border:1px solid var(--vien);
+  border-radius:var(--bo-goc);
+  padding:18px;
+  margin-bottom:16px;
+  box-shadow:var(--bong);
+}
+.box h2,.box h3{margin-top:0}
+.box h2{font-size:24px;letter-spacing:-.01em}
+#ketqua{margin:12px 2px 0;font-size:14px;color:var(--chu-nhat);font-weight:500}
+
+/* ===== Form ===== */
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.row>*{flex:1;min-width:150px}
+label{
+  display:block;
+  font-size:13px;
+  font-weight:600;
+  color:var(--chu-nhat);
+  margin-bottom:4px;
+}
+input,select,textarea{
+  width:100%;
+  padding:10px 12px;
+  font:inherit;
+  font-size:15px;
+  color:var(--chu);
+  background:var(--nen);
+  border:1px solid var(--vien);
+  border-radius:10px;
+  transition:border-color .15s, background .15s;
+}
+input:hover,select:hover,textarea:hover{border-color:var(--xanh-sang)}
+input:focus,select:focus,textarea:focus{
+  background:var(--trang);
+  border-color:var(--xanh-sang);
+  outline:none;
+  box-shadow:0 0 0 3px rgba(20,105,107,.18);
+}
+textarea{resize:vertical}
+
+/* ===== Nút bấm ===== */
+.btn{
+  display:inline-block;
+  background:var(--xanh);
+  color:#fff;
+  border:0;
+  padding:10px 18px;
+  border-radius:10px;
+  font:inherit;
+  font-size:15px;
+  font-weight:700;
+  text-decoration:none;
+  cursor:pointer;
+  transition:background .15s, transform .1s;
+}
+.btn:hover{background:var(--xanh-sang)}
+.btn:active{transform:translateY(1px)}
+.btn.vang{background:var(--vang);color:var(--vang-dam)}
+.btn.vang:hover{background:#ffb932}
+
+/* ===== Bố cục 2 cột ===== */
+.layout{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start}
+.layout .trai{flex:1;min-width:300px}
+.layout .phai{
+  flex:1.2;
+  min-width:300px;
+  position:sticky;
+  top:14px;
+}
+
+/* ===== Thẻ khách sạn ===== */
+.khachsan{
+  display:block;
+  background:var(--trang);
+  border:1px solid var(--vien);
+  border-left:6px solid var(--vien);
+  border-radius:var(--bo-goc);
+  padding:14px 16px;
+  margin-bottom:12px;
+  color:inherit;
+  text-decoration:none;
+  box-shadow:var(--bong);
+  transition:transform .15s, box-shadow .15s, border-color .15s;
+}
+.khachsan:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--bong-lon);
+  border-color:var(--xanh-sang);
+  border-left-color:var(--vang);
+}
+.khachsan h3{margin:0 0 4px;font-size:18px;color:var(--xanh)}
+.khachsan p{margin:3px 0;color:var(--chu-nhat);font-size:14px}
+
+/* ===== Điểm đánh giá ===== */
+.sao{
+  display:inline-block;
+  background:var(--vang);
+  color:var(--vang-dam);
+  padding:2px 9px;
+  border-radius:8px;
+  font-weight:800;
+  font-size:13px;
+}
+
+/* ===== Bản đồ ===== */
+iframe{
+  width:100%;
+  height:420px;
+  border:0;
+  border-radius:var(--bo-goc);
+  background:var(--xanh-nhat);
+  box-shadow:var(--bong);
+}
+
+/* ===== Chi tiết khách sạn ===== */
+#thongtin p{margin:6px 0}
+#thongtin .btn{margin:6px 8px 0 0}
+small{display:block;margin-top:8px;color:var(--chu-nhat);font-size:12px}
+#thongbao{color:var(--xanh-sang);font-weight:600;margin:6px 0 0}
+
+/* ===== Điện thoại ===== */
+@media (max-width:760px){
+  header{padding:20px 16px 60px}
+  .container{margin-top:-36px}
+  .layout .phai{position:static}
+  iframe{height:300px}
+}
+
+/* ===== Chế độ tối (theo cài đặt máy) ===== */
+@media (prefers-color-scheme:dark){
+  :root{
+    --xanh:#5fc3c0; --xanh-sang:#7fd6d3; --xanh-nhat:#1b2f2b;
+    --vang:#f0b429; --vang-dam:#2b1d00;
+    --nen:#0d1715; --trang:#15231f; --chu:#e6efec; --chu-nhat:#9bb0aa; --vien:#27403a;
+    --bong:none; --bong-lon:0 8px 24px rgba(0,0,0,.4);
+  }
+  header{background:linear-gradient(135deg,#0a3a3c,#0e4d4f)}
+  .btn{color:#04201f}
+  .btn:hover{background:#9be6e3}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;scroll-behavior:auto!important}
+}

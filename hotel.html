@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chi tiết khách sạn</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header><h1><a href="index.html">Khách sạn Vĩnh Long</a></h1></header>
+
+  <div class="container">
+    <p><a href="index.html">← Quay lại danh sách</a></p>
+
+    <div class="layout">
+      <div class="trai">
+        <div class="box" id="thongtin"></div>
+
+        <!-- Form đặt phòng -->
+        <div class="box">
+          <h3>Gửi yêu cầu đặt phòng</h3>
+          <div class="row">
+            <div><label>Ngày nhận phòng</label><input type="date" id="ngayden"></div>
+            <div><label>Ngày trả phòng</label><input type="date" id="ngaydi"></div>
+          </div>
+          <div class="row">
+            <div><label>Số khách</label><input type="number" id="songuoi" value="2" min="1"></div>
+            <div><label>Số phòng</label><input type="number" id="sophong" value="1" min="1"></div>
+          </div>
+          <div class="row">
+            <div><label>Họ tên</label><input id="hoten"></div>
+            <div><label>Số điện thoại</label><input id="sdtkhach"></div>
+          </div>
+          <label style="margin-top:8px">Ghi chú</label>
+          <textarea id="ghichu" rows="2"></textarea>
+          <p><button class="btn" id="nutcopy">Sao chép yêu cầu</button></p>
+          <p id="thongbao"></p>
+          <small>Sao chép nội dung rồi gửi qua Zalo / tin nhắn cho khách sạn, hoặc gọi trực tiếp.
+          Giá và phòng trống do khách sạn xác nhận.</small>
+        </div>
+      </div>
+
+      <div class="phai">
+        <iframe id="bando" title="Bản đồ"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/hotel.js"></script>
+</body>
+</html>
